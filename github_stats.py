@@ -362,7 +362,7 @@ Languages:
                             "occurrences": 1,
                             "color": lang.get("node", {}).get("color"),
                         }
-            dict(itertools.islice(d.languages(), 5))
+            dict(itertools.islice(languages.items(), 5))
 
             if owned_repos.get("pageInfo", {}).get(
                 "hasNextPage", False
