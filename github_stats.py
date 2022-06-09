@@ -378,7 +378,7 @@ Languages:
         # TODO: Improve languages to scale by number of contributions to
         #       specific filetypes
         print(self._languages)
-        self._languages = sorted(self._languages.items(), key=lambda k_v: k_v[1]['size'])
+        self._languages = dict(sorted(self._languages.items(), key=lambda k_v: k_v[1]['size']))
 
         print(self._languages)
         self._languages = dict(itertools.islice(self._languages.items(), 5))
