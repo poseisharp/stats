@@ -378,8 +378,8 @@ Languages:
         # TODO: Improve languages to scale by number of contributions to
         #       specific filetypes
         print(self._languages)
-        new_index = sorted(self._languages.keys(), key=lambda x: self._languages[x]['size'], reverse=True)
-        self._languages = {new_index[k]: self._languages[k] for k in new_index}
+        self._languages = sorted(self._languages.iteritems(), =lambda (x, y): self._languages['size'], reverse=True)
+        
 
         print(self._languages)
         self._languages = dict(itertools.islice(self._languages.items(), 5))
