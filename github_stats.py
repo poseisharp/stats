@@ -377,11 +377,12 @@ Languages:
 
         # TODO: Improve languages to scale by number of contributions to
         #       specific filetypes
+        dict(itertools.islice(languages.items(), 5))
         langs_total = sum([v.get("size", 0) for v in self._languages.values()])
         for k, v in self._languages.items():
             v["prop"] = 100 * (v.get("size", 0) / langs_total)
 
-    dict(itertools.islice(languages.items(), 5))
+    
 
     @property
     async def name(self) -> str:
