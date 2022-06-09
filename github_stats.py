@@ -378,6 +378,7 @@ Languages:
         # TODO: Improve languages to scale by number of contributions to
         #       specific filetypes
         print(self._languages)
+        self._languages = sorted(self._languages.keys(), key=lambda x: self.diffs[x], reverse=True)
         self._languages = dict(itertools.islice(self._languages.items(), 5))
         langs_total = sum([v.get("size", 0) for v in self._languages.values()])
         for k, v in self._languages.items():
