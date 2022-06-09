@@ -379,7 +379,7 @@ Languages:
         #       specific filetypes
         print(self._languages)
         new_index = sorted(self._languages.keys(), key=lambda x: self._languages[x]['size'], reverse=True)
-        self._languages = {new_index[k]: self._languages[k] for k in newIndex}
+        self._languages = {new_index[k]: self._languages[k] for k in new_index}
 
         print(self._languages)
         self._languages = dict(itertools.islice(self._languages.items(), 5))
