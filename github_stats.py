@@ -2,6 +2,7 @@
 
 import asyncio
 import os
+import itertools
 from typing import Dict, List, Optional, Set, Tuple, Any, cast
 
 import aiohttp
@@ -361,8 +362,7 @@ Languages:
                             "occurrences": 1,
                             "color": lang.get("node", {}).get("color"),
                         }
-            languages[-5:]
-
+            dict(itertools.islice(d.languages(), 5))
 
             if owned_repos.get("pageInfo", {}).get(
                 "hasNextPage", False
