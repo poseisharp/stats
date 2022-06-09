@@ -279,7 +279,7 @@ class Stats(object):
         """
         :return: summary of all available statistics
         """
-        languages = await self.languages_proportional
+        global languages = await self.languages_proportional
         formatted_languages = "\n  - ".join(
             [f"{k}: {v:0.4f}%" for k, v in languages.items()]
         )
