@@ -362,7 +362,6 @@ Languages:
                             "occurrences": 1,
                             "color": lang.get("node", {}).get("color"),
                         }
-            dict(itertools.islice(languages.items(), 5))
 
             if owned_repos.get("pageInfo", {}).get(
                 "hasNextPage", False
@@ -381,6 +380,8 @@ Languages:
         langs_total = sum([v.get("size", 0) for v in self._languages.values()])
         for k, v in self._languages.items():
             v["prop"] = 100 * (v.get("size", 0) / langs_total)
+
+    dict(itertools.islice(languages.items(), 5))
 
     @property
     async def name(self) -> str:
