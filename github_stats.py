@@ -146,7 +146,7 @@ class Queries(object):
           totalCount
         }}
         forkCount
-        languages(first: 5, orderBy: {{field: SIZE, direction: DESC}}) {{
+        languages(first: 10, orderBy: {{field: SIZE, direction: DESC}}) {{
           edges {{
             size
             node {{
@@ -361,6 +361,8 @@ Languages:
                             "occurrences": 1,
                             "color": lang.get("node", {}).get("color"),
                         }
+            languages[-5:]
+
 
             if owned_repos.get("pageInfo", {}).get(
                 "hasNextPage", False
